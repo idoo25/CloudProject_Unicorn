@@ -1,0 +1,211 @@
+<mxfile host="app.diagrams.net" modified="2026-01-20T12:00:00.000Z" agent="Claude" version="21.0.0">
+  <diagram name="Database Schema" id="db-schema">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Cloud Garden - Firebase Database Schema" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#D84315;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Firebase Root -->
+        <mxCell id="firebase-root" value="&#x1F525; Firebase Realtime Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FFCCBC;strokeColor=#D84315;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="470" y="80" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- sensor_data Collection -->
+        <mxCell id="sensor-collection" value="sensor_data/" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="220" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-icon" value="&#x1F321;&#xFE0F; Sensor Data (5926 records)" style="text;strokeColor=none;fillColor=#BBDEFB;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=1;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="30" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-divider" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#1565C0;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="60" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-record" value="{record_id}/" style="text;strokeColor=none;fillColor=#E3F2FD;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="68" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-temp" value="├─ temperature: float (°C)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1976D2;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="94" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-hum" value="├─ humidity: float (0-100%)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1976D2;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="120" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-soil" value="├─ soil: float (0-100%)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1976D2;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="146" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-ts" value="└─ created_at: string (ISO timestamp)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#1976D2;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="172" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-example" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#1565C0;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="198" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-example-title" value="Example:" style="text;strokeColor=none;fillColor=#E8F5E9;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=3;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="206" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="sensor-example-data" value="temp: 25.3, humidity: 65.2&#xa;soil: 45.8, created_at: 2026-01-20T10:30:00" style="text;strokeColor=none;fillColor=#E8F5E9;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#388E3C;" vertex="1" parent="sensor-collection">
+          <mxGeometry y="230" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- indexes Collection -->
+        <mxCell id="indexes-collection" value="indexes/" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="320" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="indexes-icon" value="&#x1F4D1; RAG Indexes &amp; Embeddings" style="text;strokeColor=none;fillColor=#E1BEE7;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=1;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="30" width="320" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- public_index -->
+        <mxCell id="idx-divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="60" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-public" value="public_index/ (3317 terms)" style="text;strokeColor=none;fillColor=#F3E5F5;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="68" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-public-struct" value="├─ {term}: [doc_id1, doc_id2, ...]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="94" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-public-example" value="   &quot;plant&quot;: [0, 1, 2, 4], &quot;disease&quot;: [0, 2, 3]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#9C27B0;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="120" width="320" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- doc_map -->
+        <mxCell id="idx-divider2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="142" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-docmap" value="doc_map/ (5 documents)" style="text;strokeColor=none;fillColor=#F3E5F5;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="150" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-docmap-struct" value="├─ {doc_id}: URL string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="176" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-docmap-example" value="   &quot;0&quot;: &quot;https://nature.com/articles/...&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#9C27B0;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="202" width="320" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- doc_text -->
+        <mxCell id="idx-divider3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="224" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-doctext" value="doc_text/ (5 documents)" style="text;strokeColor=none;fillColor=#F3E5F5;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="232" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-doctext-struct" value="├─ {doc_id}: Full text string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="258" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-doctext-example" value="   &quot;0&quot;: &quot;TITLE: Medicinal plant leaf...&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#9C27B0;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="284" width="320" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- embeddings -->
+        <mxCell id="idx-divider4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="306" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-embed" value="embeddings/ (96 chunks)" style="text;strokeColor=none;fillColor=#F3E5F5;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="314" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-embed-struct1" value="├─ {doc_id}: Array of chunks" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#7B1FA2;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="340" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-embed-struct2" value="│   ├─ chunk: string (first 200 chars)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=30;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#7B1FA2;fontSize=11;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="366" width="320" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="idx-embed-struct3" value="│   └─ embedding: float[384]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=30;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#7B1FA2;fontSize=11;" vertex="1" parent="indexes-collection">
+          <mxGeometry y="392" width="320" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- gamification Collection -->
+        <mxCell id="game-collection" value="gamification/" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#FFF8E1;strokeColor=#F57F17;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="300" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="game-icon" value="&#x1F3AE; Gamification Profile" style="text;strokeColor=none;fillColor=#FFECB3;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=1;" vertex="1" parent="game-collection">
+          <mxGeometry y="30" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="game-divider1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#F57F17;" vertex="1" parent="game-collection">
+          <mxGeometry y="60" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="game-points" value="points: int (e.g., 94)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#F57F17;" vertex="1" parent="game-collection">
+          <mxGeometry y="68" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="game-spins" value="spins_available: int (e.g., 2)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#F57F17;" vertex="1" parent="game-collection">
+          <mxGeometry y="94" width="300" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- missions -->
+        <mxCell id="game-divider2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#F57F17;" vertex="1" parent="game-collection">
+          <mxGeometry y="120" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="game-missions" value="missions/" style="text;strokeColor=none;fillColor=#FFF8E1;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="game-collection">
+          <mxGeometry y="128" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission1" value="├─ sync_data/" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF8F00;" vertex="1" parent="game-collection">
+          <mxGeometry y="154" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission1a" value="│   ├─ last_completed: &quot;2026-01-20&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=30;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#FFA000;" vertex="1" parent="game-collection">
+          <mxGeometry y="176" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission1b" value="│   └─ total_completed: 6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=30;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#FFA000;" vertex="1" parent="game-collection">
+          <mxGeometry y="196" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission2" value="├─ analyze_plant/" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF8F00;" vertex="1" parent="game-collection">
+          <mxGeometry y="216" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission2a" value="│   ├─ last_completed: &quot;2026-01-20&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=30;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#FFA000;" vertex="1" parent="game-collection">
+          <mxGeometry y="238" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission2b" value="│   └─ total_completed: 5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=30;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontColor=#FFA000;" vertex="1" parent="game-collection">
+          <mxGeometry y="258" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="game-mission3" value="└─ generate_report/" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF8F00;" vertex="1" parent="game-collection">
+          <mxGeometry y="278" width="300" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- coupons -->
+        <mxCell id="game-divider3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#F57F17;" vertex="1" parent="game-collection">
+          <mxGeometry y="300" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="game-coupons" value="coupons/ (Array)" style="text;strokeColor=none;fillColor=#FFF8E1;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="game-collection">
+          <mxGeometry y="308" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="game-coupon-struct" value="├─ code: &quot;CG-5OFF-ABC123&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF8F00;" vertex="1" parent="game-collection">
+          <mxGeometry y="334" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="game-coupon-struct2" value="├─ label: &quot;5% off&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=20;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF8F00;" vertex="1" parent="game-collection">
+          <mxGeometry y="356" width="300" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="Legend" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#F5F5F5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="540" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="&#x1F4CA; sensor_data = IoT sensor readings" style="text;strokeColor=none;fillColor=#E3F2FD;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="legend">
+          <mxGeometry y="26" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="&#x1F50D; indexes = RAG search system" style="text;strokeColor=none;fillColor=#F3E5F5;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="legend">
+          <mxGeometry y="52" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="&#x1F3AE; gamification = Points &amp; rewards" style="text;strokeColor=none;fillColor=#FFF8E1;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="legend">
+          <mxGeometry y="78" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="&#x1F4C6; Date format: YYYY-MM-DD" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="legend">
+          <mxGeometry y="104" width="280" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows from root to collections -->
+        <mxCell id="arrow-sensor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1565C0;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="firebase-root" target="sensor-collection">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-indexes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7B1FA2;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="firebase-root" target="indexes-collection">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-game" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F57F17;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="firebase-root" target="game-collection">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
